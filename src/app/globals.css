@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: #fafafa;
@@ -32,4 +33,30 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Blog markdown (prose) — keep the minimal tone */
+
+/* Inline code: subtle neutral chip, drop prose's default backtick quotes */
+.prose :not(pre) > code {
+  background: var(--border);
+  padding: 0.15em 0.4em;
+  border-radius: 0.35rem;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: "";
+}
+
+/* Code blocks: let the highlight.js theme own the block (avoid prose double-background) */
+.prose pre {
+  background: transparent;
+  padding: 0;
+}
+.prose pre code.hljs {
+  border-radius: 0.6rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.85em;
 }

@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
@@ -43,13 +47,6 @@ export default async function BlogPostPage({
 
   const post = data as Post;
 
-  // Minimal rendering: split on blank lines into paragraphs,
-  // preserve single line breaks within a paragraph. No markdown library.
-  const paragraphs = post.content
-    .split(/\n{2,}/)
-    .map((block) => block.trim())
-    .filter(Boolean);
-
   return (
     <div className="flex flex-1 flex-col px-6 py-14 sm:px-10">
       <article className="mx-auto w-full max-w-xl flex-1">
@@ -69,12 +66,13 @@ export default async function BlogPostPage({
           ) : null}
         </header>
 
-        <div className="flex flex-col gap-5 text-base leading-relaxed">
-          {paragraphs.map((block, i) => (
-            <p key={i} className="whitespace-pre-line">
-              {block}
-            </p>
-          ))}
+        <div className="prose prose-neutral dark:prose-invert max-w-none">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeHighlight]}
+          >
+            {post.content}
+          </ReactMarkdown>
         </div>
       </article>
 
