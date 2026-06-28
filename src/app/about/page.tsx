@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "KOI 소개 — 개발자로서 걸어온 길과 관심사.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (

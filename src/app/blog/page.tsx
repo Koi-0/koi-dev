@@ -1,5 +1,12 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "개발하며 남기는 기록 — 웹 개발 회고와 의사결정 로그.",
+  alternates: { canonical: "/blog" },
+};
 
 export const dynamic = "force-dynamic";
 

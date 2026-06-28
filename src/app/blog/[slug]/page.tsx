@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -7,6 +8,39 @@ import "highlight.js/styles/github-dark.css";
 import { createClient } from "@/lib/supabase/server";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("posts")
+    .select("title, excerpt, published_at")
+    .eq("slug", slug)
+    .eq("status", "published")
+    .maybeSingle();
+
+  if (!data) {
+    return { title: "글을 찾을 수 없음" };
+  }
+
+  return {
+    title: data.title,
+    description: data.excerpt ?? undefined,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      title: data.title,
+      description: data.excerpt ?? undefined,
+      type: "article",
+      url: `/blog/${slug}`,
+      publishedTime: data.published_at ?? undefined,
+    },
+  };
+}
 
 type Post = {
   slug: string;

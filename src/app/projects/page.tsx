@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "KOI가 직접 만들고 다듬은 프로젝트 모음.",
+  alternates: { canonical: "/projects" },
+};
 
 export default function ProjectsPage() {
   return (

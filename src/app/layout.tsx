@@ -15,8 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "koi — Portfolio",
-    description: "프론트엔드 개발자 koi의 개인 포트폴리오",
+    metadataBase: new URL("https://koi-dev.vercel.app"),
+    title: {
+        default: "KOI",
+        template: "%s | KOI",
+    },
+    description:
+        "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
+    openGraph: {
+        title: "KOI",
+        description:
+            "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
+        url: "/",
+        siteName: "KOI",
+        locale: "ko_KR",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+    },
+    alternates: {
+        canonical: "/",
+    },
 };
 
 export default function RootLayout({
