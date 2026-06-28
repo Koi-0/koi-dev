@@ -46,8 +46,10 @@ type Post = {
   slug: string;
   title: string;
   content: string;
+  excerpt: string | null;
   tags: string[] | null;
   published_at: string | null;
+  updated_at: string | null;
 };
 
 function formatDate(value: string | null) {
@@ -70,7 +72,7 @@ export default async function BlogPostPage({
   const supabase = await createClient();
   const { data } = await supabase
     .from("posts")
-    .select("slug, title, content, tags, published_at")
+    .select("slug, title, content, excerpt, tags, published_at, updated_at")
     .eq("slug", slug)
     .eq("status", "published")
     .maybeSingle();
@@ -81,8 +83,25 @@ export default async function BlogPostPage({
 
   const post = data as Post;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt ?? undefined,
+    datePublished: post.published_at ?? undefined,
+    dateModified: post.updated_at ?? post.published_at ?? undefined,
+    author: { "@type": "Person", name: "KOI" },
+    url: `https://koi-dev.vercel.app/blog/${post.slug}`,
+  };
+
   return (
     <div className="flex flex-1 flex-col px-6 py-14 sm:px-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <article className="mx-auto w-full max-w-xl flex-1">
         <header className="mb-10 border-b border-border pb-8">
           <p className="font-mono text-xs tracking-wide text-muted">

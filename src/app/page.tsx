@@ -7,8 +7,26 @@ const navItems = [
 ];
 
 export default function Home() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            { "@type": "WebSite", name: "KOI", url: "https://koi-dev.vercel.app" },
+            {
+                "@type": "Person",
+                name: "KOI",
+                url: "https://koi-dev.vercel.app",
+            },
+        ],
+    };
+
     return (
         <div className='flex flex-1 flex-col px-6 py-14 sm:px-10'>
+            <script
+                type='application/ld+json'
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+                }}
+            />
             <main className='flex flex-1 flex-col justify-center'>
                 <div className='mx-auto w-full max-w-xl'>
                     <header className='mb-16 sm:mb-20'>
