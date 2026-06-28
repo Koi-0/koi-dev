@@ -15,6 +15,7 @@ type PostRow = {
 
 function formatDate(value: string) {
   return new Date(value).toLocaleDateString("ko-KR", {
+    timeZone: "Asia/Seoul",
     year: "numeric",
     month: "short",
     day: "numeric",

@@ -14,6 +14,7 @@ type PostListItem = {
 function formatDate(value: string | null) {
   if (!value) return "";
   return new Date(value).toLocaleDateString("ko-KR", {
+    timeZone: "Asia/Seoul",
     year: "numeric",
     month: "long",
     day: "numeric",
