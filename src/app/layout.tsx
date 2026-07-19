@@ -20,12 +20,10 @@ export const metadata: Metadata = {
         default: "KOI",
         template: "%s | KOI",
     },
-    description:
-        "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
+    description: "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
     openGraph: {
         title: "KOI",
-        description:
-            "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
+        description: "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
         url: "/",
         siteName: "KOI",
         locale: "ko_KR",
@@ -36,6 +34,9 @@ export const metadata: Metadata = {
     },
     alternates: {
         canonical: "/",
+    },
+    verification: {
+        google: "XvQHa0nRZ7V5nqLS8ORbUf7-EtfGAfgCz4SSpvmHm0U",
     },
 };
 
