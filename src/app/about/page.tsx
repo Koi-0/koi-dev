@@ -14,7 +14,14 @@ export default function AboutPage() {
   return (
     <div className="flex flex-1 flex-col px-6 py-14 sm:px-10">
       <main className="mx-auto w-full max-w-xl flex-1">
-        <section className="pt-16">
+        <header>
+          <p className="font-mono text-sm tracking-wide text-accent">About</p>
+          <h1 className="mt-3 break-keep text-3xl font-semibold tracking-tight sm:text-4xl">
+            소개
+          </h1>
+        </header>
+
+        <section className="mt-16 border-t border-border pt-16">
           <p className="font-mono text-sm tracking-wide text-accent">01</p>
           <h2 className="mt-3 break-keep text-2xl font-semibold tracking-tight sm:text-3xl">
             제품 문제를 실제 동작하는 서비스로 연결합니다.
@@ -131,6 +138,22 @@ export default function AboutPage() {
           </p>
 
           <nav aria-label="링크" className="mt-12 border-t border-border">
+            <Link href="/projects" className={linkRowClass}>
+              <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
+                <span className="text-xl font-medium transition-colors duration-200 group-hover:text-accent">
+                  Projects
+                </span>
+                <span className="break-keep text-sm text-muted">
+                  문제와 판단으로 정리한 제품 개발 경험
+                </span>
+              </span>
+              <span
+                aria-hidden
+                className="text-muted transition-all duration-200 group-hover:translate-x-1 group-hover:text-accent"
+              >
+                →
+              </span>
+            </Link>
             <Link href="/blog" className={linkRowClass}>
               <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
                 <span className="text-xl font-medium transition-transform duration-200 group-hover:translate-x-1">
