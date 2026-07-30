@@ -58,7 +58,7 @@ export default function Home() {
                 className="group flex items-baseline justify-between gap-4 border-b border-border py-5 transition-colors hover:border-accent"
               >
                 <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
-                  <span className="text-xl font-medium transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="text-xl font-medium transition-colors duration-200 group-hover:text-accent">
                     {item.label}
                   </span>
                   <span className="text-sm text-muted">{item.description}</span>

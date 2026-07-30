@@ -63,8 +63,14 @@ export default async function BlogPage() {
                   <span className="font-mono text-xs tracking-wide text-muted">
                     {formatDate(post.published_at)}
                   </span>
-                  <span className="text-xl font-medium transition-transform duration-200 group-hover:translate-x-1">
+                  <span className="text-xl font-medium transition-colors duration-200 group-hover:text-accent">
                     {post.title}
+                    <span
+                      aria-hidden
+                      className="ml-3 inline-block text-muted transition-all duration-200 group-hover:translate-x-1 group-hover:text-accent"
+                    >
+                      →
+                    </span>
                   </span>
                   {post.excerpt ? (
                     <span className="text-sm leading-relaxed text-muted">

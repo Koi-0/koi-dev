@@ -156,7 +156,7 @@ export default function AboutPage() {
             </Link>
             <Link href="/blog" className={linkRowClass}>
               <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
-                <span className="text-xl font-medium transition-transform duration-200 group-hover:translate-x-1">
+                <span className="text-xl font-medium transition-colors duration-200 group-hover:text-accent">
                   Blog
                 </span>
                 <span className="break-keep text-sm text-muted">
@@ -172,7 +172,7 @@ export default function AboutPage() {
             </Link>
             <a href="mailto:dndud5182@gmail.com" className={linkRowClass}>
               <span className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
-                <span className="text-xl font-medium transition-transform duration-200 group-hover:translate-x-1">
+                <span className="text-xl font-medium transition-colors duration-200 group-hover:text-accent">
                   Email
                 </span>
                 <span className="break-keep text-sm text-muted">
