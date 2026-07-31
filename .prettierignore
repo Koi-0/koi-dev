@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+build
+.vercel
+pnpm-lock.yaml
+
+# 산문 문서는 prettier가 줄바꿈·목록 기호를 재배치하므로 제외
+*.md

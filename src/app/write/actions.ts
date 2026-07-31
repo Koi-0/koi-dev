@@ -45,8 +45,11 @@ export async function savePost(
   }
 
   // For edits, load the existing row (authenticated can read drafts now).
-  let existing: { id: string; slug: string; published_at: string | null } | null =
-    null;
+  let existing: {
+    id: string;
+    slug: string;
+    published_at: string | null;
+  } | null = null;
   if (id) {
     const { data } = await supabase
       .from("posts")

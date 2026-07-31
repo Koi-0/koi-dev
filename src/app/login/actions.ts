@@ -20,7 +20,9 @@ export async function login(
   const { error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
-    return { error: "로그인에 실패했습니다. 이메일 또는 비밀번호를 확인하세요." };
+    return {
+      error: "로그인에 실패했습니다. 이메일 또는 비밀번호를 확인하세요.",
+    };
   }
 
   redirect("/write");
