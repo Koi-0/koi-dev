@@ -1,10 +1,18 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const description = "KOI가 직접 만들고 다듬은 프로젝트 모음.";
+
 export const metadata: Metadata = {
   title: "Projects",
-  description: "KOI가 직접 만들고 다듬은 프로젝트 모음.",
+  description,
   alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Projects | KOI",
+    description,
+    url: "https://koi-dev.vercel.app/projects",
+    type: "website",
+  },
 };
 
 const projects: {
@@ -20,8 +28,9 @@ const projects: {
     name: "대기업 종합상사 대상 팜유 작황 모니터링 PoC",
     period: "2026.05 – 2026.07",
     description:
-      "대기업 종합상사의 팜유 조달 담당자가 위성 지표를 활용해 농장 상태를 탐색할 수 있는 PoC입니다. 제품 정의, 지도 기반 탐색 화면, BFF 인증 경계 설계와 인계받은 백엔드의 운영 위험 점검 및 일부 수정을 담당했습니다.",
-    keywords: "Product Definition · Frontend · BFF · Backend Review",
+      "대기업 종합상사의 트레이딩·구매 담당자가 위성 지표를 활용해 농장 상태를 탐색할 수 있는 PoC입니다. 제품 정의, 지도 기반 탐색 화면, BFF 인증 경계 설계와 인계받은 백엔드의 운영 위험 점검 및 일부 수정을 담당했습니다.",
+    keywords:
+      "Product Definition · Web Application · BFF · Backend/Infra Audit",
     href: "/projects/palm-monitoring-poc",
   },
   {

@@ -2,10 +2,18 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 
+const description = "개발하며 남기는 기록 — 웹 개발 회고와 의사결정 로그.";
+
 export const metadata: Metadata = {
   title: "Blog",
-  description: "개발하며 남기는 기록 — 웹 개발 회고와 의사결정 로그.",
+  description,
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog | KOI",
+    description,
+    url: "https://koi-dev.vercel.app/blog",
+    type: "website",
+  },
 };
 
 export const dynamic = "force-dynamic";

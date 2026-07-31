@@ -17,22 +17,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://koi-dev.vercel.app"),
   title: {
-    default: "KOI",
+    default: "KOI — 전우영 | Product Engineer",
     template: "%s | KOI",
   },
   description:
-    "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
+    "제품 문제를 실제 동작하는 서비스로 연결하는 Product Engineer 전우영의 포트폴리오이자 기술 블로그입니다.",
   openGraph: {
-    title: "KOI",
+    title: "KOI — 전우영 | Product Engineer",
     description:
-      "KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 남기는 기록과 의사결정을 담습니다.",
+      "제품 문제를 실제 동작하는 서비스로 연결하는 Product Engineer 전우영의 포트폴리오이자 기술 블로그입니다.",
     url: "/",
     siteName: "KOI",
     locale: "ko_KR",
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
   },
   alternates: {
     canonical: "/",

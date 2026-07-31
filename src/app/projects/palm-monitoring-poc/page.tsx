@@ -1,11 +1,19 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
+const description =
+  "트레이딩·구매 담당자가 국가에서 농장까지 탐색하며 위성 지표와 30일 추이를 확인하는 PoC입니다. 제품 정의, 지도 기반 사용자 흐름, BFF 인증 경계, 인계받은 백엔드·인프라의 운영 위험 점검과 국소 수정을 담당했습니다.";
+
 export const metadata: Metadata = {
   title: "대기업 종합상사 대상 팜유 작황 모니터링 PoC",
-  description:
-    "팜유 조달 담당자가 국가에서 농장까지 탐색하며 위성 지표와 30일 추이를 확인하는 PoC입니다. 제품 정의, 지도 기반 사용자 흐름, BFF 인증 경계, 인계받은 백엔드·인프라의 운영 위험 점검과 국소 수정을 담당했습니다.",
+  description,
   alternates: { canonical: "/projects/palm-monitoring-poc" },
+  openGraph: {
+    title: "대기업 종합상사 대상 팜유 작황 모니터링 PoC | KOI",
+    description,
+    url: "https://koi-dev.vercel.app/projects/palm-monitoring-poc",
+    type: "article",
+  },
 };
 
 const linkRowClass =
