@@ -4,8 +4,9 @@ KOI의 개발 포트폴리오이자 기술 블로그입니다. 웹을 만들며 
 
 ## 주요 페이지
 
-- [About](https://koi-dev.vercel.app/about): 개발자 소개 — 걸어온 길과 관심사
+- [About](https://koi-dev.vercel.app/about): About — Product Engineer 전우영. 역할이 확장된 과정과 문제를 푸는 세 가지 방식
 - [Projects](https://koi-dev.vercel.app/projects): 직접 만들고 다듬은 프로젝트 모음
+- [팜유 작황 모니터링 PoC](https://koi-dev.vercel.app/projects/palm-monitoring-poc): /projects/palm-monitoring-poc — 대기업 종합상사 대상 팜유 작황 모니터링 PoC 상세
 - [Blog](https://koi-dev.vercel.app/blog): 개발하며 남기는 기록과 의사결정 로그
 
 ## 블로그
