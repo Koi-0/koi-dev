@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "대기업 종합상사 대상 팜유 위성 모니터링 PoC",
+  title: "대기업 종합상사 대상 팜유 작황 모니터링 PoC",
   description:
     "팜유 조달 담당자가 국가에서 농장까지 탐색하며 위성 지표와 30일 추이를 확인하는 PoC입니다. 제품 정의, 지도 기반 사용자 흐름, BFF 인증 경계, 인계받은 백엔드·인프라의 운영 위험 점검과 국소 수정을 담당했습니다.",
   alternates: { canonical: "/projects/palm-monitoring-poc" },
@@ -13,7 +13,7 @@ const linkRowClass =
 
 const overview: [string, string][] = [
   ["기간", "2026.05 – 2026.07"],
-  ["산출물", "지도 기반 팜유 위성 모니터링 대시보드 (PoC MVP)"],
+  ["산출물", "지도 기반 팜유 작황 모니터링 대시보드 (PoC MVP)"],
   ["대상 사용자", "대기업 종합상사 트레이딩·구매 부서"],
   [
     "담당 역할",
@@ -21,7 +21,7 @@ const overview: [string, string][] = [
   ],
   [
     "협업 구조",
-    "5인 팀 · 대표와 제품 방향·우선순위 협의 · AI 연구팀과 모델 입출력·데이터 인터페이스 조율 · 이전 담당자가 구축한 Backend·Infrastructure 인계",
+    "소규모 팀 · 회사와 제품 방향·우선순위 협의 · AI 연구팀과 모델 입출력·데이터 인터페이스 조율 · 이전 담당자가 구축한 Backend·Infrastructure 인계",
   ],
   [
     "직접 구현",
@@ -50,7 +50,7 @@ const responsibilities = [
   },
   {
     title: "협업 영역",
-    body: "대표와 제품 방향·우선순위 협의, AI 연구팀과 모델 입출력·데이터 인터페이스 조율, 이전 담당자와 Backend·Infrastructure 인계",
+    body: "회사와 제품 방향·우선순위 협의, AI 연구팀과 모델 입출력·데이터 인터페이스 조율, 이전 담당자와 Backend·Infrastructure 인계",
   },
   {
     title: "인계 시 존재하던 시스템",
@@ -304,7 +304,7 @@ export default function PalmMonitoringPocPage() {
         <header>
           <p className={labelClass}>Project</p>
           <h1 className="mt-3 break-keep text-3xl font-semibold tracking-tight sm:text-4xl">
-            대기업 종합상사 대상 팜유 위성 모니터링 PoC
+            대기업 종합상사 대상 팜유 작황 모니터링 PoC
           </h1>
           <p className="mt-2 font-mono text-sm tracking-wide text-muted">
             2026.05 – 2026.07
