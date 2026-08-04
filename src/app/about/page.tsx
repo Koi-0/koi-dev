@@ -124,16 +124,15 @@ export default function AboutPage() {
                 href="/projects/palm-monitoring-poc"
                 className={inlineLinkClass}
               >
-                대기업 종합상사 대상 팜유 작황 모니터링 PoC
+                대기업 종합상사 대상 팜유 위성 모니터링 PoC
               </Link>
               {
                 "에서는 트레이딩·구매 담당자를 사용자로 두고, 회사의 제품 비전을 사용자·핵심 지표·화면 구성·데이터 범위·MVP 기준으로 나눠 제품 정의서와 개발 마일스톤으로 구체화했습니다."
               }
             </p>
             <p className="mt-4 break-keep text-lg leading-relaxed text-muted">
-              고객사 경영진 대상 시연 확정 통보 후 약 8일 안에 실제 위성 영상
-              적용, 더미 데이터 제거, FE·BE 연동과 QA를 완료해 시연 가능한 MVP로
-              전환했습니다.
+              이어서 목업 데이터를 화면에서 제거하고, 실제 위성 지표를 조회하는
+              흐름으로 바꿔 시연할 수 있는 상태까지 구현했습니다.
             </p>
           </div>
 
@@ -151,7 +150,7 @@ export default function AboutPage() {
                 수확량 예측 B2B SaaS
               </Link>
               {
-                "에서는 조직 기반 RLS로 고객사별 데이터를 데이터베이스 정책에서 격리하고, service_role 키가 브라우저에 노출되지 않도록 구성했습니다."
+                "에서는 조직 기반 RLS로 고객사별 데이터를 데이터베이스 정책에서 격리하고, 서버 전용 관리자 권한이 브라우저에 노출되지 않도록 구성했습니다."
               }
             </p>
             <p className="mt-4 break-keep text-lg leading-relaxed text-muted">
