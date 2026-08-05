@@ -14,7 +14,7 @@ const heroSummary =
 const background = [
   "매일 다른 형식의 주문 문서를 사람이 수기로 옮겨 적는 반복 업무를 줄이기 위해 시작한 SaaS MVP입니다. 문서 형식은 이미지·PDF·엑셀로 제각각이었고, 담당자는 새 파일을 받을 때마다 다시 형식을 파악해야 했습니다.",
   "AI 응답을 그대로 결과물로 쓸 수 없다는 점이 처음부터 명확했기 때문에, AI를 자동화 도구가 아니라 초안 생성자로 두고 사용자가 결과를 표준 포맷으로 확인·전달할 수 있는 흐름을 하나의 제품으로 설계했습니다.",
-  "AI 분석 영역을 제외하고, 프론트엔드부터 Next.js Server Action 기반 서버 연동, Supabase 연동, 분석 결과 데이터 변환, Excel 생성, Resend 이메일 전달까지의 제품 흐름을 담당했습니다.",
+  "AI 분석 영역을 제외하고, 프론트엔드부터 Next.js Server Actions 기반 서버 연동, Supabase 연동, 분석 결과 데이터 변환, Excel 생성, Resend 이메일 전달까지의 제품 흐름을 담당했습니다.",
 ];
 
 const problems = [
@@ -35,7 +35,7 @@ const roles = [
   },
   {
     title: "서버 연동",
-    body: "Next.js Server Action에서 AI 서버 호출과 오류 응답 처리를 담당해, 클라이언트가 AI 서버의 주소와 호출 방식에 직접 의존하지 않도록 구성했습니다.",
+    body: "Next.js Server Actions에서 AI 서버 호출과 오류 응답 처리를 담당해, 클라이언트가 AI 서버의 주소와 호출 방식에 직접 의존하지 않도록 구성했습니다.",
   },
   {
     title: "분석 결과 데이터 변환",
@@ -79,7 +79,7 @@ const userFlowSteps: FlowStep[] = [
   {
     title: "AI 서버 호출",
     detail:
-      "Next.js Server Action에서 저장된 파일의 URL과 메타데이터를 받아 Python AI 서버를 호출하고, 에러 매핑과 서버 로깅을 담당했습니다.",
+      "Next.js Server Actions에서 저장된 파일의 URL과 메타데이터를 받아 Python AI 서버를 호출하고, 에러 매핑과 서버 로깅을 담당했습니다.",
     scope: "direct",
   },
   {
@@ -133,7 +133,7 @@ const cases: {
   steps: { label: string; body?: string; items?: string[] }[];
 }[] = [
   {
-    title: "Supabase Storage 직접 업로드와 Next.js Server Action 경계",
+    title: "Supabase Storage 직접 업로드와 Next.js Server Actions 경계",
     steps: [
       {
         label: "문제",
@@ -141,11 +141,11 @@ const cases: {
       },
       {
         label: "해결",
-        body: "파일 업로드는 브라우저에서 Supabase Storage로 직접 수행하고, Next.js Server Action에는 저장된 파일의 URL과 메타데이터만 전달했습니다. AI 서버 호출은 Server Action에서 담당하고, AI 서버 주소는 서버 전용 환경 변수에만 두었습니다.",
+        body: "파일 업로드는 브라우저에서 Supabase Storage로 직접 수행하고, Next.js Server Actions에는 저장된 파일의 URL과 메타데이터만 전달했습니다. AI 서버 호출은 Server Action에서 담당하고, AI 서버 주소는 서버 전용 환경 변수에만 두었습니다.",
       },
       {
         label: "구현",
-        body: "브라우저에서 파일을 Supabase Storage로 직접 업로드하고, Next.js Server Action에는 저장된 파일의 URL과 메타데이터만 전달했습니다. Server Action에서 Python AI 서버를 호출하고, AI 서버 주소는 서버 전용 환경 변수에 두어 클라이언트 번들에 포함되지 않도록 경계를 나눴습니다.",
+        body: "브라우저에서 파일을 Supabase Storage로 직접 업로드하고, Next.js Server Actions에는 저장된 파일의 URL과 메타데이터만 전달했습니다. Server Action에서 Python AI 서버를 호출하고, AI 서버 주소는 서버 전용 환경 변수에 두어 클라이언트 번들에 포함되지 않도록 경계를 나눴습니다.",
       },
       {
         label: "결과",
@@ -224,7 +224,7 @@ const techChoices = [
     body: "화면·서버 로직·라우팅을 한 코드베이스로 다루기 위해 선택했습니다. 별도의 Next.js API Route를 추가하지 않고 Server Action으로 브라우저와 Python AI 서버 사이의 경계를 구성했습니다.",
   },
   {
-    title: "Next.js Server Action",
+    title: "Next.js Server Actions",
     body: "브라우저와 Python AI 서버 사이에 서버 연동 계층을 두는 데 별도 프레임워크를 도입하지 않기 위해 선택했습니다. AI 서버 호출과 에러 매핑, 서버 로깅을 한 곳에 모아 클라이언트가 AI 서버의 주소와 호출 방식에 직접 의존하지 않도록 만들었습니다.",
   },
   {
@@ -346,7 +346,7 @@ export default function AiOrderDocMvpPage() {
             AI 주문 문서 정형화 SaaS MVP
           </h1>
           <p className="mt-2 font-mono text-sm tracking-wide text-muted">
-            2026.01 – 2026.02 · 핵심 흐름 구현 · 사업 방향 전환으로 종료
+            2025.11 – 2026.03 · 핵심 흐름 구현 · 사업 방향 전환으로 종료
           </p>
           <p className={`mt-8 ${bodyClass}`}>{heroSummary}</p>
         </header>

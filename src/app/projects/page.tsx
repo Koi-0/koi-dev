@@ -44,7 +44,7 @@ const projects: {
   {
     number: "03",
     name: "AI 주문 문서 정형화 SaaS MVP",
-    period: "2026.01 – 2026.02",
+    period: "2025.11 – 2026.03",
     description:
       "이미지·PDF·엑셀 형태의 주문 문서를 AI로 정형화하는 SaaS MVP입니다. 파일 업로드부터 AI 서버 연동, 클라이언트 데이터 변환, 엑셀 다운로드와 이메일 전달까지 핵심 사용자 흐름을 구현했습니다.",
     keywords: "Frontend · Supabase · Server Action · AI Integration",
